@@ -1,0 +1,34 @@
+
+find bids where any tag 856 tagtext contains "https://www.kanopystreaming.com"
+    
+select last tag 856
+insert tag 590 set tagtext to selected
+  and set indicators to selected
+delete
+
+
+find bids any tag 590 tagtext contains "https://www.kanopystreaming.com"
+  
+
+select last tag 590
+insert tag 856 set tagtext to selected
+  and set indicators to selected
+delete
+
+find bids where bid between 121925 and 121996
+  and any tag 856 tagtext contains "https://www.kanopystreaming.com"
+    
+select last tag 856
+insert tag 590 set tagtext to selected
+  and set indicators to selected
+delete
+
+
+find bids where bid between 121950 and 121975
+  and any tag 590 tagtext contains "https://www.kanopystreaming.com"
+  
+
+select last tag 590
+insert tag 856 set tagtext to selected
+  and set indicators to selected
+delete
