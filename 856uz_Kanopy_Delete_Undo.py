@@ -5,7 +5,7 @@ imageURLPattern=re.compile('^HTTPS://WWW.KANOPY(STREAMING)*\.COM/NODE')
 imageTypePattern=re.compile('^COVER IMAGE')
 
 for field in record.getFields('590'):
-	if  field.get('u')!=None and field.get('z')!=None and record['029']!=None:
+	if  field.get('u')!=None and field.get('z')!=None and record.getField('029')!=None:
 		ImageURL=field['u'].strip()
 		ImageType=field['z'].strip()
 		if imageTypePattern.match(ImageType.upper()) and imageURLPattern.match(ImageURL.upper()):
